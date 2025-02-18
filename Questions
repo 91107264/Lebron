@@ -1,0 +1,62 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Questions {
+    String[] questions;
+    String[] answers;
+    public Questions(String[] questions, String[] answers) {
+        this.questions =questions;
+        this.answers = answers;
+    }
+
+    public static boolean ChooseQuestion(int questnum) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(GetQuestions(questnum));
+        String goal = GetAnswers(questnum);
+        String answer = scan.nextLine();
+        boolean okay = Checker.getSpecificAnswer(answer, goal);
+        //System.out.println("Your answer: " + okay);
+        PrintResponse(okay);
+        return okay;
+    }
+    public static boolean Question1() {
+        Scanner scan = new Scanner(System.in);
+        String answer = scan.nextLine();
+        boolean okay = Checker.getSpecificAnswer(answer, "23");
+        System.out.println("Your answer: " + okay);
+        if (okay) {
+            System.out.println("You got it right!");
+            return true;
+        } else {
+            System.out.println("You got it wrong you are not a true LeBron fan!");
+            return false;
+        }
+    }
+    public static String GetQuestions(int num) {
+        String[] questions = {"What number does LeBron wear?", "How old is LeBron?", "Does LeBron have a son on the same NBA team as him?","What is the name of LeBron's son who plays on the Lakers?","How many team has LeBron played for?","What team is LeBron currently playing for?","Is LeBron the greatest player of all time?","Who has scored the most points in NBA history?"};
+
+        return questions[num];
+    }
+    public static String GetAnswers(int num) {
+        String[] questions = {"23", "40", "yes", "bronny","3","the lakers","yes","lebron"};
+
+        return questions[num];
+    }
+
+    public static void PrintResponse(boolean answer) {
+        Random rand = new Random();
+        String correctanswers[] = {"Good one!","You got it right!","Wow, you might actually be a true LeBron fan!", "Correct answer!", "Good job!"};
+        String wronganswers[] = {"Bad one!","Yeah, you're not a true LeBron fan.","Wow, horrible job!","How can you know this little about LeBron?", "You failed.","Oh you're not a contributing member of society."};
+        if(answer) {
+            System.out.println(correctanswers[rand.nextInt(5)]);
+        } else {
+            System.out.println(wronganswers[rand.nextInt(6)]);
+        }
+    }
+    public String getQuestion(int index) {
+        return questions[index];
+    }
+    public String getAnswer(int index) {
+        return answers[index];
+    }
+}
