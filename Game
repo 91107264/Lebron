@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Game {
+    public static void StartGame() {
+        int[] questions = {0, 1, 2, 3, 4, 5, 6, 7};
+        String[] questions1 = {"What number does LeBron wear?", "How old is LeBron?", "Does LeBron have a son on the same NBA team as him?","What is the name of LeBron's son who plays on the Lakers?","How many team has LeBron played for?","What team is LeBron currently playing for?","Is LeBron the greatest player of all time?","Who has scored the most points in NBA history?"};
+
+        Questions LeBronQuestions = new Questions(questions1, questions1);
+        Questions BoJacksonQuestions = new Questions(questions1, questions1);
+        int score = 0;
+        boolean correct;
+        System.out.println("Welcome to LeBron Trivia lets see if you are a true lebron fan!");
+        // size of array
+        int n = questions.length;
+        Utility.shuffleArray(questions);
+        for (int question : questions) {
+            correct = Questions.ChooseQuestion(question);
+            if (correct) {
+                score++;
+            }
+        }
+        System.out.println("Alright your score is " + score + "/8." );
+    }
+}

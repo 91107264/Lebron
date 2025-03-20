@@ -1,0 +1,31 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class QuestionsTest {
+    @Test
+    void checkquestion1true() {
+        String[] questions1 = {"Is LeBron 40?", "How many teams has LeBron played for?"};
+        String[] answers1 = {"yes", "okay"};
+        Questions tester1 = new Questions(questions1, answers1);
+        assertEquals("yes", tester1.getAnswer(0));
+    }
+    void checkquestion2true() {
+        String[] questions1 = {"Is LeBron 40?", "How many teams has LeBron played for?"};
+        String[] answers1 = {"yes", "3"};
+        Questions tester1 = new Questions(questions1, answers1);
+        assertEquals("3", tester1.getAnswer(1));
+    }
+    void checkquestion3true() {
+        String[] questions1 = {"Is LeBron 40?", "How many teams has LeBron played for?"};
+        String[] answers1 = {"yes", "okay"};
+        Questions tester1 = new Questions(questions1, answers1);
+        assertEquals("yes", tester1.getAnswer(0));
+    }
+    void checkquestion4true() {
+        String[] questions1 = {"Is LeBron 40?", "How many teams has LeBron played for?"};
+        String[] answers1 = {"yes", "okay"};
+        Questions tester1 = new Questions(questions1, answers1);
+        assertEquals("yes", tester1.getAnswer(0));
+    }
+}
