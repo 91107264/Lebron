@@ -1,5 +1,21 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Are you a real sports fan?");
+        Scanner scan = new Scanner(System.in);
+        String answer;
+        answer = scan.nextLine();
+        String finalanswer = Checker.getAnswer(answer);
+        System.out.println("Your answer: " + finalanswer);
+        if (finalanswer.equals("no")) {
+            System.out.println("Oh you're not a contributing member of society");
+        }
+        if(finalanswer.equals("yes")) {
+
+            Game.StartGame();
+        }
+
+
     }
 }
